@@ -36,13 +36,17 @@ public class Gruz {
     public static void printValue(int value) {
         int truckValue = 1;
         int conteinerValue = 1;
+        String otstup = " ";
 
         System.out.println("Грузовик " + truckValue + ":");
         System.out.println("Контейнер " + conteinerValue + ":");
 
         for (int i = 1; i <= value; i++) {
+
             String string = "Ящик " + i;
-            System.out.print(string.indent(6));
+            int otstupBox = string.length() + 2;
+            // System.out.print(string.indent(6));
+            System.out.printf("%6s%s \n", otstup, string);// УБИЛСЯ но не смог заменить 6 пробелов длиной строки плюс6
             if (i % (27 * 12) == 0) {
                 truckValue++;
                 conteinerValue++;
@@ -52,7 +56,7 @@ public class Gruz {
             if (i % 12 == 0 && i % (12 * 27) != 0) {
                 conteinerValue++;
                 String string1 = "Контейнер " + conteinerValue + ":";
-                System.out.print(string1.indent(2));
+                System.out.printf("%2s%s \n", otstup, string1);
             }
         }
         System.out.println("Необходимо:");
