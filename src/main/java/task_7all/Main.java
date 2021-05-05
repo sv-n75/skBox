@@ -1,15 +1,10 @@
 package task_7all;
 
-import com.skillbox.airport.Airport;
-import com.skillbox.airport.Flight;
-import com.skillbox.airport.Terminal;
-import com.skillbox.airport.Aircraft;
+import com.skillbox.airport.*;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.time.ZoneId;
 import java.util.*;
 
 
