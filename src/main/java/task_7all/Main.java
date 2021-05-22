@@ -4,6 +4,7 @@ import com.skillbox.airport.*;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -18,7 +19,7 @@ import java.util.*;
 
 
 public class Main {
-    private static String staffFile = "C:\\Users\\123\\Desktop\\SkBox\\staff.txt";
+    private static String staffFile = "staff.txt";
     private static String dateFormat = "dd.MM.yyyy";
 
     public static void main(String[] args) {
@@ -41,9 +42,16 @@ public class Main {
         // среди тех, кто пришёл в 2017 году.
 
         System.out.println("Наибольшая зарплата среди пришедших в 2017 году ");
-        staff.stream().filter(s -> s.getWorkStart().getYear() == 117).//вижу зачеркнуто но другого не нашел
-                max(Comparator.comparing(Employee::getSalary)).
-                ifPresent(e -> System.out.print(e.getName() + " -  " + e.getSalary()));
+        staff.stream().filter(s -> {
+            try {
+                return s.getWorkStart().before(new SimpleDateFormat(dateFormat).parse("01.01.2017"));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            return false;
+        })
+                .max(Comparator.comparing(Employee::getSalary))
+                .ifPresent(e -> System.out.print(e.getName() + " -  " + e.getSalary()));
 
         System.out.println();
         System.out.println();
