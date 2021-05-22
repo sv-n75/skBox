@@ -30,33 +30,29 @@ public class Gruz {
         Scanner scanner = new Scanner(System.in);
         int value = Integer.parseInt(scanner.nextLine());
         printValue(value);
-
     }
 
     public static void printValue(int value) {
         int truckValue = 1;
         int conteinerValue = 1;
-        String otstup = " ";
 
         System.out.println("Грузовик " + truckValue + ":");
-        System.out.println("Контейнер " + conteinerValue + ":");
+        System.out.println("\tКонтейнер " + conteinerValue + ":");
 
         for (int i = 1; i <= value; i++) {
 
             String string = "Ящик " + i;
-            int otstupBox = string.length() + 2;
-            // System.out.print(string.indent(6));
-            System.out.printf("%6s%s \n", otstup, string);// УБИЛСЯ но не смог заменить 6 пробелов длиной строки плюс6
+            System.out.println("\t\t" + string);
             if (i % (27 * 12) == 0) {
                 truckValue++;
                 conteinerValue++;
                 System.out.println("Грузовик " + truckValue + ":");
-                System.out.println("Контейнер " + conteinerValue + ":");
+                System.out.println("\tКонтейнер " + conteinerValue + ":");
             }
             if (i % 12 == 0 && i % (12 * 27) != 0) {
                 conteinerValue++;
-                String string1 = "Контейнер " + conteinerValue + ":";
-                System.out.printf("%2s%s \n", otstup, string1);
+                String string1 = "\tКонтейнер " + conteinerValue + ":";
+                System.out.println(string1);
             }
         }
         System.out.println("Необходимо:");
