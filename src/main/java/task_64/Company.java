@@ -4,7 +4,9 @@ import java.util.*;
 
 public class Company {
 
-    private List<Employee> employees = new ArrayList<Employee>();
+    private static int incomeAll;
+
+    private static List<Employee> employees = new ArrayList<Employee>();
 
     public void hire(Employee employee) {//прием сотрудника
         this.employees.add(employee);
@@ -18,24 +20,47 @@ public class Company {
         this.employees.remove(employee);
     }
 
-    public static int getIncome() {//доход
-        return 250000000;
+    public  int getIncomeAll() {//доход
+        if (incomeAll != 0)// посчитать 1 раз если убрать ограничени будет считать с каждым вызовом по кругу
+            return incomeAll;
+        else {
+            for (Employee a : employees) {
+                if (a instanceof Manager) {
+                    incomeAll += ((Manager) a).getEarningsCompany();
+                }
+            }
+            return incomeAll;
+        }
     }
 
+
+
+
+
     public List<Employee> getTopSalaryStaff(int count) {//список из count высокоопл
-        return getCountList(count, new Comparator<Employee>() {
-            public int compare(Employee o1, Employee o2) {
-                return o2.getMonthSalary() - o1.getMonthSalary();
-            }
-        });
+        if (!checkCount(count)) {
+            System.out.println("Введенные данные не верны");
+            return Collections.emptyList();
+        } else {
+            return getCountList(count, new Comparator<Employee>() {
+                public int compare(Employee o1, Employee o2) {
+                    return o2.getMonthSalary(Company.this) - o1.getMonthSalary(Company.this);
+                }
+            });
+        }
     }
 
     public List<Employee> getLowestSalaryStaff(int count) {//список коунт низкооплач
-        return getCountList(count, new Comparator<Employee>() {
-            public int compare(Employee o1, Employee o2) {
-                return o1.getMonthSalary() - o2.getMonthSalary();
-            }
-        });
+        if (!checkCount(count)) {
+            System.out.println("Введенные данные не верны");
+            return Collections.emptyList();
+        } else {
+            return getCountList(count, new Comparator<Employee>() {
+                public int compare(Employee o1, Employee o2) {
+                    return o1.getMonthSalary(Company.this) - o2.getMonthSalary(Company.this);
+                }
+            });
+        }
     }
 
     private List<Employee> getCountList(int count, Comparator<Employee> comparator) {//список от каунта и компратора
@@ -55,5 +80,13 @@ public class Company {
 
     public List<Employee> getEmployees() {
         return employees;
+    }
+
+    public  boolean checkCount(int count) {//проверяем каунт
+        if (count < 0 || count > employees.size()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

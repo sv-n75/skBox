@@ -4,9 +4,8 @@ public class Operator implements Employee {
 
     private static final int salaryOper = 40000;
 
-
     @Override
-    public int getMonthSalary() {
+    public int getMonthSalary(Company company) {
         return salaryOper;
     }
 }

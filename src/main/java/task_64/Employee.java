@@ -1,5 +1,5 @@
 package task_64;
 
 public interface Employee {
-    public int getMonthSalary();
+    public int getMonthSalary(Company company);
 }

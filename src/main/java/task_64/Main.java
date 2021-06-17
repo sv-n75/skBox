@@ -48,6 +48,14 @@ public class Main {
 //            •	Учтите, в методы получения списков зарплат могут передаваться значения count, превышающие
 //            количество сотрудников в компании, или отрицательные.
 
+//    о.О
+//    нет :-) здесь немного хитрее - добавь поле int income и когда нанимаешь менеджера, в это поле прибавляй доход, который принес этот менеджер (earningsCompany)
+//
+//    Учтите, в методы получения списков зарплат могут передаваться значения count, превышающие
+//    //            количество сотрудников в компании, или отрицательные.
+//
+//    Это не учел. В Company добавь метод boolean checkCount и реализуй эти две проверки.
+//    В get Top/Low SalaryStaff сначала вызов проверочного метода, затем все что уже реализовано.
 
     public static void main(String[] args) {
 
@@ -70,13 +78,13 @@ public class Main {
         System.out.println(company.countEmployees());
 
         System.out.println("Самые высокие зарплаты: ");
-        for (Employee employee : company.getTopSalaryStaff(15)) {
-            System.out.println(employee.getMonthSalary() + " рублей");
+        for (Employee employee : company.getTopSalaryStaff(10)) {
+            System.out.println(employee.getMonthSalary(company) + " рублей");
         }
 
         System.out.println("Самые низкие зарплаты: ");
-        for (Employee employee : company.getLowestSalaryStaff(30)) {
-            System.out.println(employee.getMonthSalary() + " рублей");
+        for (Employee employee : company.getLowestSalaryStaff(10)) {
+            System.out.println(employee.getMonthSalary(company) + " рублей");
         }
 
         int count = company.countEmployees();
@@ -88,12 +96,13 @@ public class Main {
 
         System.out.println("Самые высокие зарплаты: ");
         for (Employee employee : company.getTopSalaryStaff(15)) {
-            System.out.println(employee.getMonthSalary() + " рублей");
+            System.out.println(employee.getMonthSalary(company) + " рублей");
         }
 
         System.out.println("Самые низкие зарплаты: ");
-        for (Employee employee : company.getLowestSalaryStaff(30)) {
-            System.out.println(employee.getMonthSalary() + " рублей");
+        for (Employee employee : company.getLowestSalaryStaff(15)) {
+            System.out.println(employee.getMonthSalary(company) + " рублей");
         }
+
     }
 }

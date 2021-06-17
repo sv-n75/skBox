@@ -10,7 +10,11 @@ public class Manager implements Employee {
         this.earningsCompany = (int) (Math.random() * 25000) + 115000;
     }
 
-    public int getMonthSalary() {
+    public int getEarningsCompany() {
+        return earningsCompany;
+    }
+
+    public int getMonthSalary(Company company) {
         return salaryMan + (int) (earningsCompany * 0.05);
     }
 }

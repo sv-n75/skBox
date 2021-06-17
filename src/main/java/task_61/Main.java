@@ -18,7 +18,19 @@ public class Main {
     // Изучите методы и переменные проекта задания 6.1 и установите подходящие
     // модификаторы доступа у методов и переменных.
 
-    public static void main(String[] args) {
+//    Я бы добавил еще один метод boolean canDischarge (double amount) и проверял бы остаток
+//    после попытки вывода денег, если он >= 0 тогда true, иначе выбрасывать эксепшн.
+//    Эксепшн можно взять любой стандартный, в учебных целях. На практике надо буддет написать свой
+//    (это отдельный класс с 5 строками кода).
+//    Внутри from_Account в блоке try-catch вызвать canDischarge.
+//    В send убрать сохранение текущего баланса в summa1 и проверку this.summa != summa1.
+//    Вместо этого в блоке try-catch вызвать два метода from_Account и into_Account и вернуть
+//    true. Если исключене не выбрасывается, то все 3 строки выполняются, если выбрасывается,
+//    тогда в catch обработать исключение и перед выходом из метода send вернуть false.
+//    Считаю такой метод читать и понимать будет проще.
+
+
+    public static void main(String[] args) throws BalanceException {
 
 
         BankAccount bankAccount = new BankAccount(1000);
@@ -27,24 +39,26 @@ public class Main {
 
         bankAccount.from_Account(200);
         bankAccount.into_Account(300);
-        bankAccount.balance();
+        bankAccount.printBalance();
 
         bankAccount1.into_Account(500);
         bankAccount1.from_Account(100);
-        bankAccount1.balance();
+        bankAccount1.printBalance();
 
         bankAccount2.from_Account(500);
         bankAccount2.into_Account(400);
         bankAccount2.from_Account(100);
-        bankAccount2.balance();
+        bankAccount2.printBalance();
 
         System.out.println(bankAccount1.send(bankAccount, 500));
         System.out.println(bankAccount2.send(bankAccount, 500));
-        bankAccount.balance();
-        bankAccount1.balance();
+        bankAccount.printBalance();
+        bankAccount1.printBalance();
         System.out.println(bankAccount2.send(bankAccount, 500));
-        bankAccount2.balance();
-        bankAccount.balance();
-
+        bankAccount2.printBalance();
+        bankAccount.printBalance();
+        System.out.println(bankAccount.send(bankAccount1, 1700));
+        bankAccount.printBalance();
+        bankAccount1.printBalance();
     }
 }
