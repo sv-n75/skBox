@@ -1,8 +1,8 @@
 import junit.framework.TestCase;
-import task_82.RouteCalculator;
-import task_82.StationIndex;
-import task_82.core.Line;
-import task_82.core.Station;
+import task_82_83.RouteCalculator;
+import task_82_83.StationIndex;
+import task_82_83.core.Line;
+import task_82_83.core.Station;
 
 import java.util.ArrayList;
 import java.util.List;

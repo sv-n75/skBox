@@ -1,6 +1,6 @@
-package task_82;
+package task_82_83;
 
-import task_82.core.Station;
+import task_82_83.core.Station;
 
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package task_82.core;
+package task_82_83.core;
 
 public class Station implements Comparable<Station> {
     private Line line;
