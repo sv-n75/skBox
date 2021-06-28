@@ -1,6 +1,6 @@
 package task_95.core;
 
-public class Station implements Comparable<Station>{
+public class Station implements Comparable<Station> {
     private String name;
     private String lineNumber;
 
@@ -19,10 +19,9 @@ public class Station implements Comparable<Station>{
 
     @Override
     public int compareTo(Station o) {
-        if (this.getLineNumber().equals(o.getLineNumber())){
+        if (this.getLineNumber().equals(o.getLineNumber())) {
             return this.getName().compareTo(o.getName());
-        }
-        else
+        } else
             return this.getLineNumber().compareTo(o.getLineNumber());
     }
 }

@@ -1,6 +1,10 @@
 package task_64;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Company {
 
@@ -20,7 +24,7 @@ public class Company {
         this.employees.remove(employee);
     }
 
-    public  int getIncomeAll() {//доход
+    public int getIncomeAll() {//доход
         if (incomeAll != 0)// посчитать 1 раз если убрать ограничени будет считать с каждым вызовом по кругу
             return incomeAll;
         else {
@@ -32,9 +36,6 @@ public class Company {
             return incomeAll;
         }
     }
-
-
-
 
 
     public List<Employee> getTopSalaryStaff(int count) {//список из count высокоопл
@@ -73,7 +74,7 @@ public class Company {
         return result;
     }
 
-//
+    //
     public int countEmployees() {
         return employees.size();
     }
@@ -82,7 +83,7 @@ public class Company {
         return employees;
     }
 
-    public  boolean checkCount(int count) {//проверяем каунт
+    public boolean checkCount(int count) {//проверяем каунт
         if (count < 0 || count > employees.size()) {
             return false;
         } else {

@@ -1,8 +1,5 @@
 package task_443;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Loader {
     public static void main(String[] args) {
         String text = "Вася заработал 5000 рублей, Петя - 7563 рубля, а Маша - 30000 рублей";// условие - посчитат заработок

@@ -1,8 +1,6 @@
 package task_52;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -44,7 +42,7 @@ public class FruitList {
 //            task_52/FruitList.java структурно очень похожая задача, обе исправляй, потом я сделаю рефакторинг (если потребуется)
 
 
-    public static void main(String[] args) throws IllegalCommandException{//ПЕРЕДЕЛАЛ ДОРАБОТАЛ НО НА МОЙ ВЗГЛЯД КОРЯВЕНЬКО ВЫШЛО))) НИХРЕНА НИ 3 СТРОКИ С МЕТОДАМИ И ПРОЧЕЙ КРАСОТОЙ И ПРЕЛЕСТЬЮ
+    public static void main(String[] args) throws IllegalCommandException {//ПЕРЕДЕЛАЛ ДОРАБОТАЛ НО НА МОЙ ВЗГЛЯД КОРЯВЕНЬКО ВЫШЛО))) НИХРЕНА НИ 3 СТРОКИ С МЕТОДАМИ И ПРОЧЕЙ КРАСОТОЙ И ПРЕЛЕСТЬЮ
         List<String> fruit = new ArrayList<>();
         fruit.add("апельсин");
         fruit.add("яблоко");
@@ -70,7 +68,7 @@ public class FruitList {
 
     public static List enterValue(String s, List f) throws IllegalCommandException {
         String[] strings;
-        int index ;
+        int index;
 
         if (s.equals("LIST")) {//на лист сразу
             for (int i = 0; i < f.size(); i++) {

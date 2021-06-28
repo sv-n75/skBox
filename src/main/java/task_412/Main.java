@@ -1,9 +1,6 @@
 package task_412;
 
 
-
-
-
 import java.util.Scanner;
 
 public class Main

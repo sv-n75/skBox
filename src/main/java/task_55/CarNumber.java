@@ -1,6 +1,11 @@
 package task_55;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class CarNumber {
 //    1. Напишите генератор «красивых» автомобильных номеров и методы поиска элементов в коллекциях:

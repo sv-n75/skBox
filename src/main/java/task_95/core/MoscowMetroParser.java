@@ -44,7 +44,7 @@ public class MoscowMetroParser {
     }
 
     public List<TreeSet<Station>> getConnections(List<Line> lineList,// передаем лист линий и лист станций
-                                                   Map<String, Station> listStation) {
+                                                 Map<String, Station> listStation) {
         List<TreeSet<Station>> result = new ArrayList<>();//создаем лист из где номер -станция - переход номер станция по номерам
         try {
             lineList.stream().map(line -> elements.select(
@@ -79,7 +79,7 @@ public class MoscowMetroParser {
             } else {
                 return null;
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.getStackTrace();
             return null;
         }

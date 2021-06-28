@@ -2,15 +2,13 @@ package task_7all;
 
 import com.skillbox.airport.Airport;
 import com.skillbox.airport.Flight;
-import com.skillbox.airport.Terminal;
-import com.skillbox.airport.Aircraft;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 
 // Сделайте сортировку сотрудников одновременно по заработной плате и алфавиту.

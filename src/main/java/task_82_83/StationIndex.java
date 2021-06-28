@@ -3,7 +3,11 @@ package task_82_83;
 import task_82_83.core.Line;
 import task_82_83.core.Station;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class StationIndex {

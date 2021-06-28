@@ -1,6 +1,11 @@
 package task_55.src;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class CarNumber {
 //    1. Напишите генератор «красивых» автомобильных номеров и методы поиска элементов в коллекциях:
@@ -21,7 +26,6 @@ public class CarNumber {
 //    XYZ — различные буквы, N — цифры, R — регион (от 01 до 199);
 //    XNNNYZR — пример, A111BC197, Y777HC66,
 //    таким образом, количество номер будет достаточно для оценки времени поиска даже в миллисекундах.
-
 
 
     public static void main(String[] args) {

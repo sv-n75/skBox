@@ -1,6 +1,5 @@
 package task_53;
 
-import javax.security.sasl.SaslClient;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -50,7 +49,7 @@ public class EmailList {
             }
             emailADD = scanner.nextLine();
         }
-        
+
     }
 
     public static boolean isValidEmail(String email) {

@@ -1,8 +1,14 @@
 package task_102;
 
 
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
@@ -10,32 +16,31 @@ import javax.persistence.*;
 
 public class Course {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-private String name;
+    private String name;
 
-private int duration;
+    private int duration;
 
-private String description;
+    private String description;
 
-@Enumerated(EnumType.STRING)
-@Column(columnDefinition = "enum")
-private CourseType type;
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "enum")
+    private CourseType type;
 
 
+    @Column(name = "teacher_id")
+    private int teacherId;
 
-@Column(name = "teacher_id")
-private int teacherId;
+    @Column(name = "students_count")
+    private int studentsCount;
 
-@Column(name = "students_count")
-private int studentsCount;
+    private int price;
 
-private int price;
-
-@Column(name = "price_per_hour")
-private float pricePerHour;
+    @Column(name = "price_per_hour")
+    private float pricePerHour;
 
     public int getId() {
         return id;

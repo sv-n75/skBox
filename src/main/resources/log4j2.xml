@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="INFO">
-  <appenders>
+    <appenders>
 
-    <File name="SearchNameFile" fileName="logs/search.log">
-      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-      <Filters>
-        <ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL" />
-      </Filters>
-    </File>
+        <File name="SearchNameFile" fileName="logs/search.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+        </File>
 
-    <File name="SearchNameErrors" fileName="logs/name_errors.log">
-      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-      <Filters>
-        <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL" />
-      </Filters>
-    </File>
+        <File name="SearchNameErrors" fileName="logs/name_errors.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+        </File>
 
-    <File name="SearchExceptions" fileName="logs/exceptions.log">
-      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-      <Filters>
-        <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
-      </Filters>
-    </File>
-
-
-
-  </appenders>
+        <File name="SearchExceptions" fileName="logs/exceptions.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+        </File>
 
 
-  <loggers>
-    <root level="info">
-      <appender-ref ref="SearchNameFile" level="info"/>
-      <appender-ref ref="SearchNameErrors" level="warn"/>
-      <appender-ref ref="SearchExceptions" level="error"/>
+    </appenders>
 
-    </root>
-  </loggers>
+
+    <loggers>
+        <root level="info">
+            <appender-ref ref="SearchNameFile" level="info"/>
+            <appender-ref ref="SearchNameErrors" level="warn"/>
+            <appender-ref ref="SearchExceptions" level="error"/>
+
+        </root>
+    </loggers>
 </configuration>

@@ -46,7 +46,10 @@ import task_95.core.Station;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class ReadHtmlCreateJson {
 
@@ -60,21 +63,21 @@ public class ReadHtmlCreateJson {
 
         MoscowMetroParser mockowMetroParser = new MoscowMetroParser();//создаем объект класса парсера - получаем методы
 
-        List<Line>metroLines = MoscowMetroParser.getLines();
+        List<Line> metroLines = MoscowMetroParser.getLines();
 
-        metroLines.forEach(line ->{
+        metroLines.forEach(line -> {
             moscowMetroStationsLines.addLine(line);//добавили линию
             List<Station> metroStation = mockowMetroParser.getStations(line);//по этой линии нашли станции
             moscowMetroStationsLines.addLinesStation(line, metroStation);//добавили линию  и набор станций
             metroStation.forEach(s -> stations.put(s.getName(), s));//имя - станция - добавляем в мап
 
-    });
+        });
 
         List<TreeSet<Station>> allConnections = mockowMetroParser
                 .getConnections(metroLines, stations);
         allConnections.forEach(s -> moscowMetroStationsLines.addConnect(s));
         mapMetroFile(moscowMetroStationsLines);
-}
+    }
 
     private static void mapMetroFile(MoscowMetroStationsLines moscowMetroStationsLines) {
         try {
@@ -91,7 +94,7 @@ public class ReadHtmlCreateJson {
     }
 
 
-    }
+}
 
 
 

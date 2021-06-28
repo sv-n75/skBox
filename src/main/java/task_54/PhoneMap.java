@@ -70,11 +70,10 @@ public class PhoneMap {
         if (string.matches("^[a-zA-Z]+$")) {//начало и конец строки буквы
             if (!checkName(string, pB)) {
                 System.out.println("введите номер");
-                if (scanner.nextLine().matches("^[0-9]{1,11}$")){
+                if (scanner.nextLine().matches("^[0-9]{1,11}$")) {
                     int number = Integer.parseInt(scanner.nextLine());
                     pB.put(string, number);
-                }
-                else throw new IllegalCommandException();
+                } else throw new IllegalCommandException();
             }
             return;
         }
@@ -85,7 +84,7 @@ public class PhoneMap {
             if (!checkNumber(number, pB)) {
                 System.out.println("введите имя");
                 String name = scanner.nextLine();
-                if (name.matches("^[a-zA-Z]+$")){
+                if (name.matches("^[a-zA-Z]+$")) {
                     pB.put(name, number);
                     return;
                 }

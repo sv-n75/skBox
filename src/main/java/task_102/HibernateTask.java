@@ -11,8 +11,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 public class HibernateTask {
 
 
-
-
     public static void main(String[] args) {
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure("hibernate.cfg.xml").build();
@@ -24,7 +22,7 @@ public class HibernateTask {
         Course course = session.get(Course.class, 1);
         System.out.println(course.getName());
 
-         sessionFactory.close();
+        sessionFactory.close();
     }
 
 }

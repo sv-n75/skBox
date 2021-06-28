@@ -11,8 +11,6 @@ package task_61;
 //    тогда в catch обработать исключение и перед выходом из метода send вернуть false.
 //    Считаю такой метод читать и понимать будет проще.
 
-import java.io.IOException;
-
 public class BankAccount {
 
     private double balance;
