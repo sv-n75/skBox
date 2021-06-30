@@ -1,6 +1,5 @@
 package task_102;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -10,10 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "courses")
-
+@Table(name = "Courses")
 public class Course {
 
     @Id
