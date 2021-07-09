@@ -1,4 +1,4 @@
-package task_102;
+package task_102.entity;
 
 public enum CourseType {
 

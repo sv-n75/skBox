@@ -13,7 +13,7 @@ import java.sql.Statement;
 public class PrintAverageValue {
     private static final String URL_MYSQL = "jdbc:mysql://localhost:3306/skillbox";
     private static final String USER_MYSQL = "root";
-    private static final String PASSWORD_MYSQL = "rcrfdfnjh";
+    private static final String PASSWORD_MYSQL = "root";
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(URL_MYSQL, USER_MYSQL, PASSWORD_MYSQL)) {

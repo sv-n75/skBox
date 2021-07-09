@@ -21,7 +21,7 @@ import java.util.List;
 
 
 public class Main {
-    private static String staffFile = "C:\\Users\\123\\Desktop\\SkBox\\staff.txt";
+    private static String staffFile = "C:\\Users\\HONOR\\IdeaProjects\\skBox\\staff.txt";
     private static String dateFormat = "dd.MM.yyyy";
 
     public static void main(String[] args) {
